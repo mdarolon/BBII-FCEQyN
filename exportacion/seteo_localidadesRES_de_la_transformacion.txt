@@ -1,0 +1,496 @@
+--INDETERMINADO (HAITI)
+UPDATE dsa.recien_graduado SET bi_loc_res = '50998998' 
+WHERE TRANSLATE(UPPER(TRIM(pais_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%HA%' ;
+
+--SAN CARLOS (BA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '16207' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN CARLOS%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--SAN JOSE (ER)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3868' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN JOSE%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ENTRE RIOS%' ;
+
+--GENERAL ROCA (RIO NEGRO)
+UPDATE dsa.recien_graduado SET bi_loc_res = '17731' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ROCA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%RIO NEGRO%' ;
+
+--SAN MIGUEL (SALTA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '9326' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MIGUEL%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SALTA%' ;
+
+--GENERAL DELGADO (PARAGUAY)
+UPDATE dsa.recien_graduado SET bi_loc_res = '50130' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GENERAL DELEGADO%'
+AND TRANSLATE(UPPER(TRIM(pais_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PARAGUAY%' ;
+
+--VILLA DOLORES (CORDOBA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '14885' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VILLA DOLORES%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORDOBA%' ;
+
+--VILLA MARIA (CORDOBA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '15099' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VILLA MARIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORDOBA%' ;
+
+--SANTO TOME (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4177' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%TOME%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%' ;
+
+--PERUGORRIA (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5068' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PERUGORRIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%' ;
+
+--CHOS MALAL (NEUQUEN)
+UPDATE dsa.recien_graduado SET bi_loc_res = '17981' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHOS%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%NEUQUEN%' ;
+
+--MONTE DE OCA (SANTA FE)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1857' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OCA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTA FE%' ;
+
+--CHAJARI (ENTRE RIOS)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3499' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHAJARI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ENTRE RIOS%' ;
+
+--EL COLORADO (FORMOSA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5738' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%COLORADO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%FORMOSA%' ;
+
+--CERRO AZUL (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4024' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AZUL%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--ASUNCION (PARAGUAY)
+UPDATE dsa.recien_graduado SET bi_loc_res = '50269' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ASUNCION%'
+AND TRANSLATE(UPPER(TRIM(pais_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PARAGUAY%' ;
+
+--CAMPO GRANDE (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4371' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAMPO GRANDE%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--BERNARDO DE YRIGOYEN (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4414' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BERNARDO DE YRIGOYEN%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+UPDATE dsa.recien_graduado SET bi_loc_proc = '4414' 
+WHERE ciudad_res = 'Bernardo de Irigoyen ';
+
+
+--SAN IGNACIO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4083' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%IGNACIO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--LA PICADA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3898' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PICADA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--AVELLANEDA (SANTA FE)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5569' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AVELLANEDA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTA FE%';
+
+--ROSARIO (SANTA FE)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5482133' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ROSARIO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTA FE%';
+
+--CAA CATI (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4606' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAA CATI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%';
+
+--ESQUINA (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3299' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ESQUINA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%';
+
+--PASO DE LOS LIBRES (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3609' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PASO DE LOS LIBRES%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%';
+
+--SAUCE (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5079' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAUCE%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%';
+
+--GOBERNADOR VIRASORO (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4190' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VIRASORO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%';
+
+
+--CAPITAL FEDERAL (BUENOS AIRES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1' 
+WHERE (TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAPITAL%' OR
+TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS%' OR
+TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CABA%' OR
+TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AUTONOMA%')
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%';
+
+UPDATE dsa.recien_graduado SET bi_loc_res = '1' 
+WHERE (TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' or
+TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BS AS%');
+
+
+--FORTIN OLAVARRIA (BUENOS AIRES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '16143' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OLAVARRIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%';
+
+
+--CAPITAL (SANTIAGO DEL ESTERO)
+UPDATE dsa.recien_graduado SET bi_loc_res = '7621' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAPITAL%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTIAGO%';
+
+--CHACRAS DE CORIA (MENDOZA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '13222' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MENDOZA%';
+
+--CASILDA (SANTA FE)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1403' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CASILDA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTA FE%';
+
+--TOLEDO (BRASIL)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5548998' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%TOLEDO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PARANA%'
+AND TRANSLATE(UPPER(TRIM(pais_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BRASIL%';
+
+--GUAYMALLEN (MENDOZA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5450028' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GUAYM%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MENDOZA%' ;
+
+--PRESIDENCIA ROQUE SAEZ PEÑA (CHACO)
+UPDATE dsa.recien_graduado SET bi_loc_res = '12711' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PEÑA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHACO%' ;
+
+--PUERTO MADRYN (CHUBUT)
+UPDATE dsa.recien_graduado SET bi_loc_res = '18772' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MADRYN%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHUBUT%' ;
+
+--SAN MARTIN (BA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '122' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN MARTIN%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--CORRIENTES (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4479' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%' ;
+
+--LUJAN (BA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '16420' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%LUJAN%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--CRESPO (ER)
+UPDATE dsa.recien_graduado SET bi_loc_res = '2958' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CRESPO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ENTRE RIOS%' ;
+
+--ITATI (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4659' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ITATI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%' ;
+
+--DOS DE MAYO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4399' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%DOS DE MAYO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--WANDA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4431' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%WANDA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--CANDELARIA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4000' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CANDELARIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--ZAVALLA (SANTA FE)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1323' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ZAVALLA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SANTA FE%' ;
+
+--ENCARNACION (PARAGUAY)
+UPDATE dsa.recien_graduado SET bi_loc_res = '50118' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ENCARNACION%';
+
+--MENDOZA (MENDOZA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '13208' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MENDOZA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MENDOZA%'; 
+
+--SANT CUGAT DEL VALLÈS (BARCELONA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '341142' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CUGAT%';
+
+--JARDIN AMERICA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4122' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%JARDIN AMERICA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--CAPIOVI (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4130' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAPIOVI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--SAN PEDRO (BUENOS AIRES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '2446' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN PEDRO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--GEELONG (AUSTRALIA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '6198998' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GEELONG%'
+AND TRANSLATE(UPPER(TRIM(pais_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AUSTRALIA%'; 
+
+--ITUZAINGO (CORRIENTES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3930' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ITUZAINGO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORRIENTES%' ;
+
+--COLONIA ALICIA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4384' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ALICIA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--CALETA OLIVIA (SANTA CRUZ)
+UPDATE dsa.recien_graduado SET bi_loc_res = '18559' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CALETA OLIVIA%';
+
+--CORDOBA 
+UPDATE dsa.recien_graduado SET bi_loc_res = '2056' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORDOBA%';
+
+--CONCEPCION DEL URUGUAY (ER)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3742' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CONCEPCION DEL URUGUAY%';
+
+--PUERTO ESPERANZA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4435' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PUERTO ESPERANZA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--SAN JAVIER (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4321' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN JAVIER%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--DON TORCUATO
+UPDATE dsa.recien_graduado SET bi_loc_res = '2' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%DON TORCUATO%';
+
+--HOHENAU
+UPDATE dsa.recien_graduado SET bi_loc_res = '50131' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%HOHENAU%';
+
+--SAN SALVADOR DE JUJUY
+UPDATE dsa.recien_graduado SET bi_loc_res = '9716' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%JUJUY%';
+
+--ARISTOBULO DEL VALLE
+UPDATE dsa.recien_graduado SET bi_loc_res = '4394' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VALLE%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--PUERTO IGUAZU
+UPDATE dsa.recien_graduado SET bi_loc_res = '4424' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%IGUA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--COLONIA AURORA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4385' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AURORA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--CONCEPCION DE LA SIERRA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4297' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CONCEPCION%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--GOBERNADOR ROCA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4098' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ROCA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--LEANDRO N. ALEM (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4035' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ALEM%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--PUERTO RICO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4147' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PUERTO RICO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--OBERA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4338' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OBERA%';
+
+--APOSTOLES
+UPDATE dsa.recien_graduado SET bi_loc_res = '4259' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OSTOLE%';
+UPDATE dsa.recien_graduado SET bi_loc_res = '4259' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OSTOLE%';
+
+
+--GARUPA
+UPDATE dsa.recien_graduado SET bi_loc_res = '3971' WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GARUPA%';
+
+--QUITILIPI (CHACO)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5415' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%QUITILIPI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHACO%' ;
+
+--CONCEPCION DE LA SIERRA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4297' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CONCEPCION%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--CLORINDA (FORMOSA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5785' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CLORINDA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%FORMOSA%' ;
+
+--SAN JAVIER (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4321' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN JAVIER%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--HOHENAU
+UPDATE dsa.recien_graduado SET bi_loc_res = '50131' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%HOHENAU%';
+
+--PUERTO BELGRANO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5454049' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BELGRANO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--LA MATANZA (BS)
+UPDATE dsa.recien_graduado SET bi_loc_res = '5406427' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%LA MATANZA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--GARUHAPE
+UPDATE dsa.recien_graduado SET bi_loc_res = '4142' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GARUHAPE%';
+
+--VILLA MADERO (BS)
+UPDATE dsa.recien_graduado SET bi_loc_res = '618' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MADERO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--25 DE MAYO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4383' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%25 DE MAYO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--MENDOZA (MENDOZA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '13208' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MENDOZA%';
+
+--VILLA SANTA ROSA (CORDOBA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '10745' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VILLA SANTA ROSA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORDOBA%' ;
+
+--COMANDANTE ANDRESITO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4415' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%COMANDANTE ANDRESITO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--LA PLATA (BA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1121' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%LA PLATA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%BUENOS AIRES%' ;
+
+--ARROYITO (CORDOBA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '1779' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ARROYITO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CORDOBA%' ;
+
+--CHIMBAS (SAN JUAN)
+UPDATE dsa.recien_graduado SET bi_loc_res = '12775' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CHIMBAS%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SAN JUAN%' ;
+
+
+--CONCEPCION DEL URUGUAY (ER)
+UPDATE dsa.recien_graduado SET bi_loc_res = '3742' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CONCEPCION DEL URUGUAY%';
+
+--CAMPO VIERA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4372' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VIERA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--COLONIA AURORA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4385' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%AURORA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--SALTA (SALTA)
+UPDATE dsa.recien_graduado SET bi_loc_res = '8882' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SALTA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%SALTA%' ;
+
+--CAPIOVI (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4130' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%CAPIOVI%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--GARUPA
+UPDATE dsa.recien_graduado SET bi_loc_res = '3971' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GARUPA%';
+UPDATE dsa.recien_graduado SET bi_loc_res = '3971' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%GARGUPA%';
+
+--ARISTOBULO DEL VALLE
+UPDATE dsa.recien_graduado SET bi_loc_res = '4394' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%VALLE%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--JARDIN AMERICA (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4122' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%JARDIN AMERICA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--GOBERNADOR ROCA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4098' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ROCA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--MONTECARLO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4460' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MONTECARLO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--LEANDRO N. ALEM (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4035' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%ALEM%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%'; 
+
+--ELDORADO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4441' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%DORADO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--PUERTO RICO (MISIONES)
+UPDATE dsa.recien_graduado SET bi_loc_res = '4147' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%PUERTO RICO%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--POSADAS
+UPDATE dsa.recien_graduado SET bi_loc_res = '3905' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OSADA%';
+
+--OBERA
+UPDATE dsa.recien_graduado SET bi_loc_res = '4338' 
+WHERE TRANSLATE(UPPER(TRIM(ciudad_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%OBERA%'
+AND TRANSLATE(UPPER(TRIM(prov_res)),'áéíóúÁÉÍÓÚ' ,'aeiouAEIOU') LIKE '%MISIONES%' ;
+
+--SIN LOCALIDAD
+UPDATE dsa.recien_graduado SET bi_loc_res = '0000' WHERE bi_loc_res is null;
+
+

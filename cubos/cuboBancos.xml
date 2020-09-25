@@ -1,0 +1,46 @@
+<Schema name="dw_banco">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="clientes">
+    <Hierarchy name="clientes" visible="true" hasAll="true" primaryKey="dni">
+      <Table name="clientes" schema="public">
+      </Table>
+      <Level name="edad" visible="true" table="clientes" column="edad" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="cliente" visible="true" column="dni" nameColumn="apellido" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="apellido">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="sucursales">
+    <Hierarchy name="sucursales" visible="true" hasAll="true" primaryKey="nrsuc">
+      <Table name="sucursales" schema="public">
+      </Table>
+      <Level name="sucursal" visible="true" table="sucursales" column="nrsuc" nameColumn="ciudad" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="ciudad">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="tiempo">
+    <Hierarchy name="tiempo" visible="true" hasAll="true" primaryKey="fecha">
+      <Table name="tiempo" schema="public">
+      </Table>
+      <Level name="anio" visible="true" table="tiempo" column="anio" ordinalColumn="anio" type="Integer" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never" captionColumn="anio">
+      </Level>
+      <Level name="mes" visible="true" table="tiempo" column="mes" ordinalColumn="mes" type="Integer" uniqueMembers="true" levelType="TimeMonths" hideMemberIf="Never" captionColumn="mes">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="bancos" visible="true" cache="true" enabled="true">
+    <Table name="movimientos" schema="public">
+    </Table>
+    <DimensionUsage source="clientes" name="clientes" visible="true" foreignKey="dni" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="sucursales" name="sucursales" visible="true" foreignKey="nrsuc" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="tiempo" name="tiempo" visible="true" foreignKey="fecha" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="monto" column="monto" datatype="Numeric" formatString="#,##" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="operaciones" column="nrmov" datatype="Numeric" aggregator="count" visible="true">
+    </Measure>
+    <CalculatedMember name="ratio" formatString="#,##" formula="[Measures].[monto]/[Measures].[operaciones]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>

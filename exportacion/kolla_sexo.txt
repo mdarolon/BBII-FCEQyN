@@ -1,0 +1,4 @@
+cod_sexo|descripcion
+1|Femenino
+2|Masculino
+3|No Responde

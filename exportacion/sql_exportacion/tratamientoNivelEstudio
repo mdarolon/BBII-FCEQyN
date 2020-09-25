@@ -1,0 +1,60 @@
+﻿
+-- MAPEO NIVEL DE ESTUDIOS PADRES Y PAREJA
+----Usado en el job principal: mapeo_nivel_est 
+
+select estudio_pareja from dsa.recien_graduado where estudio_pareja is null;
+select estudio_padre from dsa.recien_graduado where estudio_padre is null;
+select estudio_madre from dsa.recien_graduado where estudio_madre is null;
+
+-- Actualizo los registros NULL con el valor 'No Responde'
+--Usado en el job principal: mapeo_nivel_est
+Begin work;
+UPDATE dsa.recien_graduado SET estudio_padre ='No Responde' where estudio_padre is null;
+UPDATE dsa.recien_graduado SET estudio_madre ='No Responde' where estudio_madre is null;
+UPDATE dsa.recien_graduado SET estudio_pareja ='No Responde' where estudio_pareja is null;
+rollback;    commit work;
+
+select * from d_nivel_est_madre
+
+select estudio_pareja, bi_est_pareja from dsa.recien_graduado;
+select estudio_padre, bi_est_padre from dsa.recien_graduado;
+select estudio_madre, bi_est_madre from dsa.recien_graduado;
+
+
+Begin work;
+UPDATE dsa.recien_graduado SET bi_est_madre = '1' where estudio_madre = 'Primarios completos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '2' where estudio_madre = 'Primarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '3' where estudio_madre = 'Secundarios completos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '4' where estudio_madre = 'Secundarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '5' where estudio_madre = 'Universitarios completos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '6' where estudio_madre = 'Universitarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '7' where estudio_madre = 'No Responde';
+UPDATE dsa.recien_graduado SET bi_est_madre = '8' where estudio_madre = 'Terciarios completos';
+UPDATE dsa.recien_graduado SET bi_est_madre = '9' where estudio_madre = 'Terciarios incompletos';
+rollback;    commit work;
+
+Begin work;
+UPDATE dsa.recien_graduado SET bi_est_padre = '1' where estudio_padre = 'Primarios completos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '2' where estudio_padre = 'Primarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '3' where estudio_padre = 'Secundarios completos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '4' where estudio_padre = 'Secundarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '5' where estudio_padre = 'Universitarios completos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '6' where estudio_padre = 'Universitarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '7' where estudio_padre = 'No Responde';
+UPDATE dsa.recien_graduado SET bi_est_padre = '8' where estudio_padre = 'Terciarios completos';
+UPDATE dsa.recien_graduado SET bi_est_padre = '9' where estudio_padre = 'Terciarios incompletos';
+rollback;    commit work;
+
+Begin work;
+UPDATE dsa.recien_graduado SET bi_est_pareja = '1' where estudio_pareja = 'Primarios completos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '2' where estudio_pareja = 'Primarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '3' where estudio_pareja = 'Secundarios completos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '4' where estudio_pareja = 'Secundarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '5' where estudio_pareja = 'Universitarios completos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '6' where estudio_pareja = 'Universitarios incompletos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '7' where estudio_pareja = 'No Responde';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '8' where estudio_pareja = 'Terciarios completos';
+UPDATE dsa.recien_graduado SET bi_est_pareja = '9' where estudio_pareja = 'Terciarios incompletos';
+rollback;    commit work;
+
+

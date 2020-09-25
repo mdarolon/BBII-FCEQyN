@@ -1,0 +1,6 @@
+cod_grupo_conv|descripcion
+1|Con familia parental
+2|Solo
+3|Con familia propia
+4|Otra
+5|No Responde

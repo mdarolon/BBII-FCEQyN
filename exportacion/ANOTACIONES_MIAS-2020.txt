@@ -1,0 +1,32 @@
+
+DSA:
+graduados_colacion.txt >>> dsa_graduado_colacion
+catalogo_localidades.csv >>> dsa_localidad
+resultado_encuesta.txt >>> recien_graduado
+colaciones.txt >>> dsa_colacion
+
+
+
+28/04
+El campo bi_fecha_fin_enc de la tabla recien_graduado ya no se usa para la dimension TIEMPO. No crearla.
+La dimension tiempo tendra como PK la fecha de respuesta de la encuesta (en ese formato).
+
+Se crean los campos:
+  bi_edad						        --SE CARGA CON UNA FUNCION
+  bi_loc_res integer,
+  bi_loc_proc integer,
+  bi_fecha_nac date,
+  bi_fecha_ingreso date,
+  bi_fecha_egreso date,
+  bi_colacion integer,
+  bi_sexo integer,						
+  bi_estado_civil integer,				
+  bi_grupo_conv integer,				
+  bi_carrera integer,
+  bi_cond_actual character varying,
+  bi_cant_hs_sem character varying,  
+  bi_fecha_fin_enc character varying,   --NO SE USA MAS
+  bi_est_padre integer,					--NO SE USA MAS
+  bi_est_madre integer,					--NO SE USA MAS
+  bi_est_pareja integer,				--NO SE USA MAS
+  bi_cant_hijos integer,				--NO SE USA MAS

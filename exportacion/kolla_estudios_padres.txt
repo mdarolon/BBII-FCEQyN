@@ -1,0 +1,10 @@
+cod_estudio|descripcion
+1|Primarios completos
+2|Primarios incompletos
+3|Secundarios completos
+4|Secundarios incompletos
+5|Universitarios incompletos
+6|Universitarios completos
+7|No Responde
+8|Terciarios completos
+9|Terciarios incompletos

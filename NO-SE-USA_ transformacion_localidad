@@ -1,0 +1,42 @@
+﻿-- Localidad de Residencia - Procedencia
+
+--select ciudad_res, prov_res, pais_res from dsa.recien_graduado 
+--order by prov_res;
+
+--select * from dsa.localidad where nom_loc = 'Geelong';
+--select * from dsa.localidad where loc_id = '4330';
+
+select UPPER(ciudad_res)
+from dsa.recien_graduado
+where UPPER(ciudad_res) like '%STOLES%'
+
+--select loc_id
+--from dsa.localidad
+--where UPPER(nom_loc) like '%STOLES%'; 
+
+--update dsa.recien_graduado set bi_loc_res = '4259'
+--WHERE ciudad_res = (select UPPER(ciudad_res)
+-- from dsa.recien_graduado
+--  where UPPER(ciudad_res) like '%STOLES%');
+
+CREATE OR REPLACE FUNCTION dsa.f_actualizar_loc_res() RETURNS VOID AS
+$$
+DECLARE codloc Integer;
+DECLARE v_row Integer;
+   
+BEGIN
+  codloc := (select loc_id from dsa.localidad where nom_loc = 'APOSTOLES'); 
+  --codloc := 4259;
+  v_row := 1;
+  
+  FOR v_row IN select count(*) from dsa.recien_graduado where UPPER(ciudad_res) like '%STOLES%'
+  LOOP
+      -- Actualizacion de las filas
+      UPDATE dsa.recien_graduado
+        SET bi_loc_res = codloc
+        WHERE ciudad_res = (select UPPER(ciudad_res)from dsa.recien_graduado where UPPER(ciudad_res) like '%STOLES%');
+        v_row := v_row + 1;
+  END LOOP;
+END
+$$
+LANGUAGE plpgsql;

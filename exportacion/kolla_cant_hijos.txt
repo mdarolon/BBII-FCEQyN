@@ -1,0 +1,5 @@
+cod_cant_hijos|descripcion
+1|Uno
+2|Dos
+3|Tres o mas
+4|No Responde
