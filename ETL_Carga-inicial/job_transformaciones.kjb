@@ -1,82 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>job_principal</name>
+  <name>job_transformaciones</name>
     <description/>
     <extended_description/>
     <job_version/>
   <directory>&#47;</directory>
   <created_user>-</created_user>
-  <created_date>2020&#47;03&#47;12 08:13:52.406</created_date>
+  <created_date>2020&#47;09&#47;24 08:44:41.796</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2020&#47;03&#47;12 08:13:52.406</modified_date>
+  <modified_date>2020&#47;09&#47;24 08:44:41.796</modified_date>
     <parameters>
     </parameters>
-  <connection>
-    <name>dsaGraduado</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>graduados</database>
-    <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4bf18ba718cc2fe8a</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>dsaGraduados</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>graduados</database>
-    <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4bf18ba718cc2fe8a</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>dsaGraduados</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>graduados</database>
-    <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4bf18ba718cc2fe8a</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <connection>
     <name>dsaGraduados</name>
     <server>localhost</server>
@@ -121,26 +55,6 @@
    <pass_batchid>N</pass_batchid>
    <shared_objects_file/>
   <entries>
-    <entry>
-      <name>START</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>Y</start>
-      <dummy>N</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>105</xloc>
-      <yloc>60</yloc>
-      </entry>
     <entry>
       <name>mapeo_loc_res</name>
       <description/>
@@ -640,7 +554,7 @@ AND TRANSLATE(UPPER(TRIM(prov_res)),&apos;áéíóúÁÉÍÓÚ&apos; ,&apos;aeio
 --SIN LOCALIDAD
 UPDATE dsa.recien_graduado SET bi_loc_res = &apos;0000&apos; WHERE bi_loc_res is null;
 
-</sql>
+mapeo</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -649,23 +563,28 @@ UPDATE dsa.recien_graduado SET bi_loc_res = &apos;0000&apos; WHERE bi_loc_res is
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>216</xloc>
-      <yloc>60</yloc>
+      <xloc>201</xloc>
+      <yloc>46</yloc>
       </entry>
     <entry>
-      <name>log_loc_res</name>
+      <name>START</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-------------------------------------------------
-***********ERROR SQL LOCALIDADES RES**************
--------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>216</xloc>
-      <yloc>149</yloc>
+      <xloc>92</xloc>
+      <yloc>45</yloc>
       </entry>
     <entry>
       <name>mapeo_loc_proc</name>
@@ -1174,26 +1093,11 @@ UPDATE dsa.recien_graduado SET bi_loc_proc = &apos;0000&apos; WHERE bi_loc_proc 
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>333</xloc>
-      <yloc>60</yloc>
+      <xloc>304</xloc>
+      <yloc>48</yloc>
       </entry>
     <entry>
-      <name>log_loc_proc</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-------------------------------------------------
-***********ERROR SQL LOCALIDADES PROC**************
--------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>331</xloc>
-      <yloc>152</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_carrera</name>
+      <name>carrera_graduado</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -1221,26 +1125,11 @@ UPDATE dsa.recien_graduado SET bi_loc_proc = &apos;0000&apos; WHERE bi_loc_proc 
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>442</xloc>
-      <yloc>63</yloc>
+      <xloc>415</xloc>
+      <yloc>47</yloc>
       </entry>
     <entry>
-      <name>log_mapeo_carrera</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>------------------------------------------------------------
-***********ERROR MAPEO DE LA CARRERA DEL GRADUADO**************
-----------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>443</xloc>
-      <yloc>149</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_fecha_nac</name>
+      <name>fecha_nac</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -1268,327 +1157,11 @@ UPDATE dsa.recien_graduado SET bi_loc_proc = &apos;0000&apos; WHERE bi_loc_proc 
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>564</xloc>
-      <yloc>60</yloc>
+      <xloc>516</xloc>
+      <yloc>49</yloc>
       </entry>
     <entry>
-      <name>log_mapeo_fechanac</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>------------------------------------------------------------
-***********ERROR MAPEO FECHA NACIMIENTO DEL GRADUADO**************
-----------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>564</xloc>
-      <yloc>142</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_colacion</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_colacion_graduado.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>678</xloc>
-      <yloc>60</yloc>
-      </entry>
-    <entry>
-      <name>log_colacion</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------------
-***********ERROR MAPEO COLACION**************
-------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>674</xloc>
-      <yloc>153</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_sit_actual_lab</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_situacion_laboral_graduado.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>811</xloc>
-      <yloc>63</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_cant_hs_sem</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_cant_horas_sem.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>931</xloc>
-      <yloc>88</yloc>
-      </entry>
-    <entry>
-      <name>log_sit_lab</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------------
-***********ERROR MAPEO SITUACION ACTUAL LABORAL**************
----------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>764</xloc>
-      <yloc>150</yloc>
-      </entry>
-    <entry>
-      <name>log_cant_hs_sem</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------------
-***********ERROR MAPEO CANT HS TRAB SEM**************
----------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>829</xloc>
-      <yloc>216</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_sexo</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_sexo.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>930</xloc>
-      <yloc>234</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_estado_civil</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_estado_civil.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>931</xloc>
-      <yloc>328</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_grupo_conv</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_grupo_conv.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>932</xloc>
-      <yloc>441</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_satis_laboral</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_satis_trabajo.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>795</xloc>
-      <yloc>509</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_entidad</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_entidad_trabaja.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>661</xloc>
-      <yloc>508</yloc>
-      </entry>
-    <entry>
-      <name>mapeo_edad</name>
+      <name>edad</name>
       <description/>
       <type>SQL</type>
       <sql>UPDATE dsa.recien_graduado SET bi_edad = 
@@ -1598,90 +1171,33 @@ date_part(&apos;Y&apos;,now()) - date_part(&apos;Y&apos;,bi_fecha_nac::date);
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>dsaGraduado</connection>
+      <connection>dsaGraduados</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>557</xloc>
-      <yloc>511</yloc>
+      <xloc>670</xloc>
+      <yloc>51</yloc>
       </entry>
     <entry>
-      <name>log_mapeo_sexo</name>
+      <name>rango_edad</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR MAPEO SEXO**************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
+      <type>SQL</type>
+      <sql>truncate table dsa.d_redad;
+select dsa.spc_dim_edad(1,100);
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>dsaGraduados</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>835</xloc>
-      <yloc>281</yloc>
+      <xloc>759</xloc>
+      <yloc>145</yloc>
       </entry>
     <entry>
-      <name>log_mapeo_estado_civil</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------
-***********ERROR MAPEO ESTADO CIVIL**************
------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>788</xloc>
-      <yloc>341</yloc>
-      </entry>
-    <entry>
-      <name>log_mapeo_grupo_con</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR MAPEO GRUPO CONV **************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>810</xloc>
-      <yloc>416</yloc>
-      </entry>
-    <entry>
-      <name>log_mapeo_tipo_entidad</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR MAPEO TIPO ENTIDAD**************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>617</xloc>
-      <yloc>420</yloc>
-      </entry>
-    <entry>
-      <name>log_mapeo_edad</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR MAPEO EDAD**************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>528</xloc>
-      <yloc>397</yloc>
-      </entry>
-    <entry>
-      <name>carga_tf</name>
+      <name>carga_ft_sit_lab</name>
       <description/>
       <type>SQL</type>
       <sql>--CARGO LA TABLA DE HECHOS EN EL dsa
@@ -1715,119 +1231,11 @@ FROM
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>235</xloc>
-      <yloc>512</yloc>
+      <xloc>770</xloc>
+      <yloc>241</yloc>
       </entry>
     <entry>
-      <name>log_carga_dsa.ft</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR CARGA FT - DSA**************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>235</xloc>
-      <yloc>407</yloc>
-      </entry>
-    <entry>
-      <name>error_job_principal</name>
-      <description/>
-      <type>MAIL</type>
-      <server/>
-      <port/>
-      <destination>mdarolon@gmail.com</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto/>
-      <replytoname/>
-      <subject/>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment/>
-      <include_files>N</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>N</use_auth>
-      <use_secure_auth>N</use_secure_auth>
-      <auth_user/>
-      <auth_password>Encrypted </auth_password>
-      <only_comment>N</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses/>
-      <filetypes>      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>283</xloc>
-      <yloc>281</yloc>
-      </entry>
-    <entry>
-      <name>exito_job_principal</name>
-      <description/>
-      <type>MAIL</type>
-      <server/>
-      <port/>
-      <destination>mdarolon@gmail.com</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto/>
-      <replytoname/>
-      <subject/>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment/>
-      <include_files>N</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>N</use_auth>
-      <use_secure_auth>N</use_secure_auth>
-      <auth_user/>
-      <auth_password>Encrypted </auth_password>
-      <only_comment>N</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses/>
-      <filetypes>      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>130</xloc>
-      <yloc>423</yloc>
-      </entry>
-    <entry>
-      <name>log_mapeo_satif_lab</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-----------------------------------------
-***********ERROR MAPEO SATISFECCION LABORAL **************
-------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>717</xloc>
-      <yloc>436</yloc>
-      </entry>
-    <entry>
-      <name>carga_dim_tiempo</name>
+      <name>dim_tiempo</name>
       <description/>
       <type>SQL</type>
       <sql>truncate table dsa.d_tiempo;
@@ -1841,44 +1249,86 @@ select dsa.spc_dim_tiempo(&apos;2018-1-1&apos;,1600);
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>507</yloc>
+      <xloc>758</xloc>
+      <yloc>328</yloc>
       </entry>
     <entry>
-      <name>log_carga_tiempo</name>
+      <name>log_loc_res</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>*************************
--- ERROR CARGA DIN TIEMPO EN DSA
-********************************</logmessage>
+      <logmessage>-------------------------------------------------
+***********ERROR SQL LOCALIDADES RES**************
+-------------------------------------------------</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>451</xloc>
-      <yloc>414</yloc>
+      <xloc>199</xloc>
+      <yloc>142</yloc>
       </entry>
     <entry>
-      <name>carga_rango_edad</name>
+      <name>log_loc_proc</name>
       <description/>
-      <type>SQL</type>
-      <sql>truncate table dsa.d_redad;
-select dsa.spc_dim_edad(1,100);
-</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>dsaGraduados</connection>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-------------------------------------------------
+***********ERROR SQL LOCALIDADES PROC**************
+-------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>338</xloc>
-      <yloc>511</yloc>
+      <xloc>300</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
-      <name>log_carga_redad</name>
+      <name>log_car_grad</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>------------------------------------------------------------
+***********ERROR MAPEO DE LA CARRERA DEL GRADUADO**************
+----------------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>415</xloc>
+      <yloc>147</yloc>
+      </entry>
+    <entry>
+      <name>log_fec_nac</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>------------------------------------------------------------
+***********ERROR MAPEO FECHA NACIMIENTO DEL GRADUADO**************
+----------------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>515</xloc>
+      <yloc>148</yloc>
+      </entry>
+    <entry>
+      <name>log_edad</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-----------------------------------------
+***********ERROR MAPEO EDAD**************
+------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>617</xloc>
+      <yloc>131</yloc>
+      </entry>
+    <entry>
+      <name>log_rango_edad</name>
       <description/>
       <type>WRITE_TO_LOG</type>
       <logmessage>*************************
@@ -1889,8 +1339,38 @@ select dsa.spc_dim_edad(1,100);
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>341</xloc>
-      <yloc>403</yloc>
+      <xloc>675</xloc>
+      <yloc>178</yloc>
+      </entry>
+    <entry>
+      <name>log_carga_ft</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-----------------------------------------
+***********ERROR CARGA FT - DSA**************
+------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>678</xloc>
+      <yloc>239</yloc>
+      </entry>
+    <entry>
+      <name>log_dim_tiempo</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>*************************
+-- ERROR CARGA DIN TIEMPO EN DSA
+********************************</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>662</xloc>
+      <yloc>320</yloc>
       </entry>
     <entry>
       <name>Abortar trabajo</name>
@@ -1900,8 +1380,198 @@ select dsa.spc_dim_edad(1,100);
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>505</xloc>
-      <yloc>281</yloc>
+      <xloc>372</xloc>
+      <yloc>263</yloc>
+      </entry>
+    <entry>
+      <name>error_job_transf</name>
+      <description/>
+      <type>MAIL</type>
+      <server/>
+      <port/>
+      <destination>sistemas@fceqyn.unam.edu.ar</destination>
+      <destinationCc>daniela@fceqyn.unam.edu.ar</destinationCc>
+      <destinationBCc/>
+      <replyto/>
+      <replytoname/>
+      <subject/>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment/>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>Encrypted </auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>211</xloc>
+      <yloc>259</yloc>
+      </entry>
+    <entry>
+      <name>fecha_ingreso</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_fecha_ingreso_graduado.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>676</xloc>
+      <yloc>436</yloc>
+      </entry>
+    <entry>
+      <name>fecha_egreso</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_fecha-egreso_graduado.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>481</xloc>
+      <yloc>446</yloc>
+      </entry>
+    <entry>
+      <name>carga_ft_valor_acad</name>
+      <description/>
+      <type>SQL</type>
+      <sql>--CARGO LA TABLA DE HECHOS EN EL dsa
+
+--Inserto el contenido de la VISTA en la tabla de hechos creada 
+DELETE FROM dsa.ft_valoracion_academica;
+INSERT INTO dsa.ft_valoracion_academica
+SELECT recien_graduado.bi_plan_tecnico, 
+	recien_graduado.bi_interes_cont, 
+	recien_graduado.fecha_fin_enc, 
+	recien_graduado.bi_aporte_univ, 
+	recien_graduado.bi_carrera, 
+	recien_graduado.nro_doc,
+	recien_graduado.bi_sexo,
+	recien_graduado.bi_nivel_exig, 
+	recien_graduado.bi_selec_univer,
+	recien_graduado.bi_selec_car,
+	recien_graduado.bi_valor_univ,	
+	recien_graduado.bi_expec_cont,
+	recien_graduado.bi_plan_corto,
+	recien_graduado.bi_plan_gen,
+	recien_graduado.bi_univ_socie,
+	--date_part(&apos;year&apos;,age(bi_fecha_egreso, bi_fecha_ingreso))AS duracion_real,
+	dsa.spc_datediff(&apos;year&apos;, date(bi_fecha_ingreso),date(bi_fecha_egreso)) AS duracion_real,
+	recien_graduado.bi_duracion_teorica
+ FROM 
+  dsa.recien_graduado;
+
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>dsaGraduados</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>362</xloc>
+      <yloc>445</yloc>
+      </entry>
+    <entry>
+      <name>log_fec_ingr</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>*************************
+-- ERROR CARGA FECHA INGRESO EN DSA
+********************************</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>379</yloc>
+      </entry>
+    <entry>
+      <name>log_fec_egr</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>*************************
+-- ERROR CARGA FECHA EGRESO EN DSA
+********************************</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>474</xloc>
+      <yloc>362</yloc>
+      </entry>
+    <entry>
+      <name>log_ft_val_acad</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-----------------------------------------
+***********ERROR CARGA FT SitLab- DSA**************
+------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>364</xloc>
+      <yloc>361</yloc>
       </entry>
     <entry>
       <name>Éxito</name>
@@ -1910,8 +1580,47 @@ select dsa.spc_dim_edad(1,100);
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>130</xloc>
-      <yloc>514</yloc>
+      <xloc>252</xloc>
+      <yloc>445</yloc>
+      </entry>
+    <entry>
+      <name>ok_job_transf</name>
+      <description/>
+      <type>MAIL</type>
+      <server/>
+      <port/>
+      <destination>sistemas@fceqyn.unam.edu.ar</destination>
+      <destinationCc>daniela@fceqyn.unam.edu.ar</destinationCc>
+      <destinationBCc/>
+      <replyto/>
+      <replytoname/>
+      <subject/>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment/>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>Encrypted </auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>147</xloc>
+      <yloc>444</yloc>
       </entry>
   </entries>
   <hops>
@@ -1926,20 +1635,74 @@ select dsa.spc_dim_edad(1,100);
     </hop>
     <hop>
       <from>mapeo_loc_res</from>
-      <to>log_loc_res</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_loc_res</from>
       <to>mapeo_loc_proc</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>mapeo_loc_proc</from>
+      <to>carrera_graduado</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>carrera_graduado</from>
+      <to>fecha_nac</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>fecha_nac</from>
+      <to>edad</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>edad</from>
+      <to>rango_edad</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>rango_edad</from>
+      <to>carga_ft_sit_lab</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>carga_ft_sit_lab</from>
+      <to>dim_tiempo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>mapeo_loc_res</from>
+      <to>log_loc_res</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -1952,17 +1715,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_loc_proc</from>
-      <to>mapeo_carrera</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_carrera</from>
-      <to>log_mapeo_carrera</to>
+      <from>carrera_graduado</from>
+      <to>log_car_grad</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1970,17 +1724,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_carrera</from>
-      <to>mapeo_fecha_nac</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_fecha_nac</from>
-      <to>log_mapeo_fechanac</to>
+      <from>fecha_nac</from>
+      <to>log_fec_nac</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1988,8 +1733,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_colacion</from>
-      <to>log_colacion</to>
+      <from>edad</from>
+      <to>log_edad</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1997,26 +1742,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_colacion</from>
-      <to>mapeo_sit_actual_lab</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_sit_actual_lab</from>
-      <to>mapeo_cant_hs_sem</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_sit_actual_lab</from>
-      <to>log_sit_lab</to>
+      <from>rango_edad</from>
+      <to>log_rango_edad</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -2024,8 +1751,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_cant_hs_sem</from>
-      <to>log_cant_hs_sem</to>
+      <from>carga_ft_sit_lab</from>
+      <to>log_carga_ft</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -2033,170 +1760,8 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>mapeo_fecha_nac</from>
-      <to>mapeo_colacion</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_cant_hs_sem</from>
-      <to>mapeo_sexo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_sexo</from>
-      <to>mapeo_estado_civil</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_estado_civil</from>
-      <to>mapeo_grupo_conv</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_grupo_conv</from>
-      <to>mapeo_satis_laboral</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_satis_laboral</from>
-      <to>mapeo_entidad</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_entidad</from>
-      <to>mapeo_edad</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_sexo</from>
-      <to>log_mapeo_sexo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_estado_civil</from>
-      <to>log_mapeo_estado_civil</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_grupo_conv</from>
-      <to>log_mapeo_grupo_con</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_entidad</from>
-      <to>log_mapeo_tipo_entidad</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_edad</from>
-      <to>log_mapeo_edad</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>carga_tf</from>
-      <to>log_carga_dsa.ft</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_satis_laboral</from>
-      <to>log_mapeo_satif_lab</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>mapeo_edad</from>
-      <to>carga_dim_tiempo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>carga_dim_tiempo</from>
-      <to>log_carga_tiempo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>carga_dim_tiempo</from>
-      <to>carga_rango_edad</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>carga_rango_edad</from>
-      <to>carga_tf</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>carga_rango_edad</from>
-      <to>log_carga_redad</to>
+      <from>dim_tiempo</from>
+      <to>log_dim_tiempo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -2222,7 +1787,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_mapeo_carrera</from>
+      <from>log_car_grad</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2231,7 +1796,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_mapeo_fechanac</from>
+      <from>log_fec_nac</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2240,7 +1805,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_colacion</from>
+      <from>log_edad</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2249,7 +1814,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_sit_lab</from>
+      <from>log_rango_edad</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2258,7 +1823,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_cant_hs_sem</from>
+      <from>log_carga_ft</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2267,79 +1832,7 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_mapeo_sexo</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_mapeo_estado_civil</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_mapeo_grupo_con</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_carga_dsa.ft</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_carga_redad</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_carga_tiempo</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_mapeo_edad</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_mapeo_tipo_entidad</from>
-      <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>log_mapeo_satif_lab</from>
+      <from>log_dim_tiempo</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2349,7 +1842,7 @@ select dsa.spc_dim_edad(1,100);
     </hop>
     <hop>
       <from>Abortar trabajo</from>
-      <to>error_job_principal</to>
+      <to>error_job_transf</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -2357,7 +1850,88 @@ select dsa.spc_dim_edad(1,100);
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>carga_tf</from>
+      <from>dim_tiempo</from>
+      <to>fecha_ingreso</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>fecha_ingreso</from>
+      <to>fecha_egreso</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>fecha_egreso</from>
+      <to>carga_ft_valor_acad</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>fecha_ingreso</from>
+      <to>log_fec_ingr</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>log_fec_ingr</from>
+      <to>Abortar trabajo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>fecha_egreso</from>
+      <to>log_fec_egr</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>log_fec_egr</from>
+      <to>Abortar trabajo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>carga_ft_valor_acad</from>
+      <to>log_ft_val_acad</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>log_ft_val_acad</from>
+      <to>Abortar trabajo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>carga_ft_valor_acad</from>
       <to>Éxito</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -2367,7 +1941,7 @@ select dsa.spc_dim_edad(1,100);
     </hop>
     <hop>
       <from>Éxito</from>
-      <to>exito_job_principal</to>
+      <to>ok_job_transf</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

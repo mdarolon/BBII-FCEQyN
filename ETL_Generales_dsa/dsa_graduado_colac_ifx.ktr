@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>dsa_localidad</name>
+    <name>dsa_graduado_colac_ifx</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#47;</directory>
     <parameters>
     </parameters>
@@ -51,7 +52,7 @@
     <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
-    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <step_performance_capturing_size_limit/>
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -60,42 +61,15 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user>-</created_user>
-  <created_date>2020&#47;02&#47;13 11:14:53.175</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2020&#47;02&#47;13 11:14:53.175</modified_date>
+  <created_user/>
+  <created_date>2020&#47;02&#47;13 08:19:27.740</created_date>
+  <modified_user/>
+  <modified_date>2020&#47;02&#47;13 08:19:27.740</modified_date>
   </info>
   <notepads>
-    <notepad>
-      <note>Entrada:
-Se obtiene el catalogo completo de las localidades (ciudad, dpto, provincia, pais).
-Fuente: SIU-Guarani, tablas: mug_localidades, mug_dptos_partidos, mug_provincias, mug_paises
-
-Salida:
-Se cargan las localidades, dptos, provincias y paises en la tabla dsa.localidad.
-</note>
-      <xloc>12</xloc>
-      <yloc>28</yloc>
-      <width>579</width>
-      <heigth>115</heigth>
-      <fontname>Arial</fontname>
-      <fontsize>10</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>165</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <connection>
-    <name>dsaLocalidad</name>
+    <name>dsaGraduados</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -116,10 +90,70 @@ Se cargan las localidades, dptos, provincias y paises en la tabla dsa.localidad.
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>informix</name>
+    <server>172.16.100.5</server>
+    <type>INFORMIX</type>
+    <access>Native</access>
+    <database>exactas</database>
+    <port>1526</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f28ca415af7dcb9cabd5</password>
+    <servername>ol_exactas</servername>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1526</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>localidad</from><to>dsa_localidad</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>dsa_grad_cola_ifx</from><to>dsa_graduado_colacion</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>dsa_localidad</name>
+    <name>dsa_grad_cola_ifx</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>informix</connection>
+    <sql>-- Script B
+-- Exportacion de los graduados x colacion (sga_graduado_colacion)
+-- BD: SIU-Guarani
+
+select a.nro_inscripcion, a.carrera, a.plan, (SUBSTR(a.fecha_egreso, 4, 2)||&apos;&#47;&apos;||SUBSTR(a.fecha_egreso, 1, 2)||&apos;&#47;&apos;||
+SUBSTR(a.fecha_egreso, 7, 4)), a.colacion, (SUBSTR(b.fecha_ingreso, 4, 2)||&apos;&#47;&apos;||SUBSTR(b.fecha_ingreso, 1, 2)||&apos;&#47;&apos;||
+SUBSTR(b.fecha_ingreso, 7, 4)), c.tipo_documento, c.nro_documento,
+(SUBSTR(c.fecha_nacimiento, 4, 2)||&apos;&#47;&apos;||SUBSTR(c.fecha_nacimiento, 1, 2)||&apos;&#47;&apos;||SUBSTR(c.fecha_nacimiento, 7, 4))
+from sga_titulos_otorg a, sga_alumnos b, sga_personas c 
+where colacion = ${colacion} and fecha_ini_tramite &gt; ${fecha}
+and a.carrera = b.carrera
+and a.nro_inscripcion = b.nro_inscripcion 
+and b.nro_inscripcion = c.nro_inscripcion; 
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>126</xloc>
+      <yloc>152</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dsa_graduado_colacion</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -128,13 +162,13 @@ Se cargan las localidades, dptos, provincias y paises en la tabla dsa.localidad.
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>dsaLocalidad</connection>
+    <connection>dsaGraduados</connection>
     <schema>dsa</schema>
-    <table>localidad</table>
+    <table>graduado_colacion</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -147,163 +181,46 @@ Se cargan las localidades, dptos, provincias y paises en la tabla dsa.localidad.
     <return_field/>
     <fields>
         <field>
-          <column_name>loc_id</column_name>
-          <stream_name>localidad</stream_name>
+          <column_name>nro_inscripcion</column_name>
+          <stream_name>nro_inscripcion</stream_name>
         </field>
         <field>
-          <column_name>nom_loc</column_name>
-          <stream_name>nom_loc</stream_name>
+          <column_name>carrera</column_name>
+          <stream_name>carrera</stream_name>
         </field>
         <field>
-          <column_name>nom_dpto</column_name>
-          <stream_name>nom_dpto</stream_name>
+          <column_name>plan</column_name>
+          <stream_name>plan</stream_name>
         </field>
         <field>
-          <column_name>nom_prov</column_name>
-          <stream_name>nom_prov</stream_name>
+          <column_name>fecha_egreso</column_name>
+          <stream_name>fecha_egreso</stream_name>
         </field>
         <field>
-          <column_name>nom_pais</column_name>
-          <stream_name>nom_pais</stream_name>
+          <column_name>colacion</column_name>
+          <stream_name>colacion</stream_name>
         </field>
         <field>
-          <column_name>dpto_id</column_name>
-          <stream_name>dpto_partido</stream_name>
+          <column_name>fecha_ingreso</column_name>
+          <stream_name>fecha_ingreso</stream_name>
         </field>
         <field>
-          <column_name>prov_id</column_name>
-          <stream_name>provincia</stream_name>
+          <column_name>tipo_documento</column_name>
+          <stream_name>tipo_documento</stream_name>
         </field>
         <field>
-          <column_name>pais_id</column_name>
-          <stream_name>pais</stream_name>
+          <column_name>nro_documento</column_name>
+          <stream_name>nro_documento</stream_name>
+        </field>
+        <field>
+          <column_name>fecha_nacimiento</column_name>
+          <stream_name>fecha_nacimiento</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>302</xloc>
-      <yloc>187</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>localidad</name>
-    <type>CsvInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>&#47;home&#47;daniela&#47;Dropbox&#47;MTI&#47;Taller_Trabajo_Final&#47;Trabajo_Final&#47;scriptconversion&#47;exportacion&#47;salidas&#47;catalogo_localidades.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>&quot;</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <encoding>UTF-8</encoding>
-    <fields>
-      <field>
-        <name>localidad</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>nom_loc</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>54</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>nom_dpto</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>19</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>nom_prov</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>nom_pais</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>9</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>dpto_partido</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>provincia</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pais</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>141</xloc>
-      <yloc>187</yloc>
+      <xloc>327</xloc>
+      <yloc>152</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

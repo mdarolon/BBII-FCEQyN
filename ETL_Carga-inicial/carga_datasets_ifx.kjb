@@ -1,41 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>carga_datasets</name>
+  <name>carga_datasets_ifx</name>
     <description/>
     <extended_description/>
     <job_version/>
-    <job_status>0</job_status>
   <directory>&#47;</directory>
   <created_user>-</created_user>
-  <created_date>2020&#47;05&#47;21 12:18:34.368</created_date>
+  <created_date>2020&#47;12&#47;05 10:23:13.538</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2020&#47;05&#47;21 12:18:34.368</modified_date>
+  <modified_date>2020&#47;12&#47;05 10:23:13.538</modified_date>
     <parameters>
-        <parameter>
-            <name>colacion</name>
-            <default_value/>
-            <description>Numero de colacion a importar</description>
-        </parameter>
-        <parameter>
-            <name>ifx_pass</name>
-            <default_value/>
-            <description>Clave para conexion al motor de PostgreSQL</description>
-        </parameter>
-        <parameter>
-            <name>ifx_usuario</name>
-            <default_value>dba</default_value>
-            <description>Usuario para conexion al motor de Informix</description>
-        </parameter>
-        <parameter>
-            <name>pg_pass</name>
-            <default_value/>
-            <description>Clave para conexion al motor de PostgreSQL</description>
-        </parameter>
-        <parameter>
-            <name>pg_usuario</name>
-            <default_value>postgres</default_value>
-            <description>Usuario para conexion al motor de PostgreSQL</description>
-        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -76,16 +50,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>88</xloc>
-      <yloc>68</yloc>
+      <xloc>124</xloc>
+      <yloc>121</yloc>
       </entry>
     <entry>
-      <name>carrera</name>
+      <name>carreras</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_carrera.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_carrera_ifx.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -108,16 +82,16 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>177</xloc>
-      <yloc>68</yloc>
+      <xloc>233</xloc>
+      <yloc>121</yloc>
       </entry>
     <entry>
-      <name>graduado_colacion</name>
+      <name>graduados_colacion</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_graduado_colacion.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_graduado_colac_ifx.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -140,8 +114,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>297</xloc>
-      <yloc>71</yloc>
+      <xloc>343</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
       <name>localidad</name>
@@ -149,7 +123,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_localidad.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_localidad_ifx.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -172,8 +146,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>411</xloc>
-      <yloc>71</yloc>
+      <xloc>449</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
       <name>colacion</name>
@@ -181,7 +155,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_colacion.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_colacion_ifx.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -204,8 +178,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>518</xloc>
-      <yloc>72</yloc>
+      <xloc>532</xloc>
+      <yloc>125</yloc>
       </entry>
     <entry>
       <name>recien_graduado</name>
@@ -236,83 +210,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
-      <yloc>74</yloc>
-      </entry>
-    <entry>
-      <name>log_carga_carrera</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>-------------------------------------------------
-***********ERROR CARGA DATASET CARRERA**************
--------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>174</xloc>
-      <yloc>170</yloc>
-      </entry>
-    <entry>
-      <name>log_carga_grad_colac</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>----------------------------------------------------------
-***********ERROR CARGA DATASET GRADUADO COLACION**********
-----------------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>294</xloc>
-      <yloc>159</yloc>
-      </entry>
-    <entry>
-      <name>log_carga_loc</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------
-***********ERROR CARGA DATASET LOCALIDAD**********
---------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>411</xloc>
-      <yloc>160</yloc>
-      </entry>
-    <entry>
-      <name>log_carga_colacion</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------
-***********ERROR CARGA DATASET COLACION**********
---------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>518</xloc>
-      <yloc>184</yloc>
-      </entry>
-    <entry>
-      <name>log_carga_encuesta</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>--------------------------------------------------
-***********ERROR CARGA DATASET RECIEN GRADUADO**********
---------------------------------------------------</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject/>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>620</xloc>
-      <yloc>163</yloc>
+      <xloc>628</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
       <name>plan_estudio</name>
@@ -320,7 +219,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Job.Filename.Directory}&#47;dsa_plan_estudio.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;dsa_plan_estudio_ifx.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -343,11 +242,86 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>731</xloc>
-      <yloc>72</yloc>
+      <xloc>725</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
-      <name>log_plan_estudio</name>
+      <name>log_carga_carrera</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-------------------------------------------------
+***********ERROR CARGA DATASET CARRERA**************
+-------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>232</xloc>
+      <yloc>250</yloc>
+      </entry>
+    <entry>
+      <name>log_grad_colacion</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>-------------------------------------------------
+***********ERROR CARGA DATASET GRAD COLACION**************
+-------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>341</xloc>
+      <yloc>251</yloc>
+      </entry>
+    <entry>
+      <name>log_carga_loc</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>--------------------------------------------------
+***********ERROR CARGA DATASET LOCALIDAD**********
+--------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>447</xloc>
+      <yloc>216</yloc>
+      </entry>
+    <entry>
+      <name>log_carga_colacion</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>--------------------------------------------------
+***********ERROR CARGA DATASET COLACION**********
+--------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>533</xloc>
+      <yloc>246</yloc>
+      </entry>
+    <entry>
+      <name>log_carga_ncuesta</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>--------------------------------------------------
+***********ERROR CARGA DATASET RECIEN GRADUADO**********
+--------------------------------------------------</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>627</xloc>
+      <yloc>226</yloc>
+      </entry>
+    <entry>
+      <name>log_carga_plan</name>
       <description/>
       <type>WRITE_TO_LOG</type>
       <logmessage>--------------------------------------------------
@@ -358,8 +332,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>731</xloc>
-      <yloc>176</yloc>
+      <xloc>727</xloc>
+      <yloc>253</yloc>
       </entry>
     <entry>
       <name>Abortar trabajo</name>
@@ -369,86 +343,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>398</xloc>
-      <yloc>289</yloc>
-      </entry>
-    <entry>
-      <name>Correo Error</name>
-      <description/>
-      <type>MAIL</type>
-      <server/>
-      <port/>
-      <destination>sistemas@fceqyn.unam.edu.ar</destination>
-      <destinationCc>daniela@fceqyn.unam.edu.ar</destinationCc>
-      <destinationBCc/>
-      <replyto/>
-      <replytoname/>
-      <subject/>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment/>
-      <include_files>N</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>N</use_auth>
-      <use_secure_auth>N</use_secure_auth>
-      <auth_user/>
-      <auth_password>Encrypted </auth_password>
-      <only_comment>N</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses/>
-      <filetypes>      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>578</xloc>
-      <yloc>289</yloc>
-      </entry>
-    <entry>
-      <name>Correo Exito</name>
-      <description/>
-      <type>MAIL</type>
-      <server/>
-      <port/>
-      <destination>sistemas@fceqyn.unam.edu.ar</destination>
-      <destinationCc>daniela@fceqyn.unam.edu.ar</destinationCc>
-      <destinationBCc/>
-      <replyto/>
-      <replytoname/>
-      <subject/>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment/>
-      <include_files>N</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>N</use_auth>
-      <use_secure_auth>N</use_secure_auth>
-      <auth_user/>
-      <auth_password>Encrypted </auth_password>
-      <only_comment>N</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses/>
-      <filetypes>      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>823</xloc>
-      <yloc>166</yloc>
+      <xloc>418</xloc>
+      <yloc>344</yloc>
       </entry>
     <entry>
       <name>Éxito</name>
@@ -457,14 +353,92 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>829</xloc>
-      <yloc>68</yloc>
+      <xloc>820</xloc>
+      <yloc>125</yloc>
+      </entry>
+    <entry>
+      <name>Correo Exito</name>
+      <description/>
+      <type>MAIL</type>
+      <server/>
+      <port/>
+      <destination/>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto/>
+      <replytoname/>
+      <subject/>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment/>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>Encrypted </auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>822</xloc>
+      <yloc>206</yloc>
+      </entry>
+    <entry>
+      <name>Correo Error</name>
+      <description/>
+      <type>MAIL</type>
+      <server/>
+      <port/>
+      <destination/>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto/>
+      <replytoname/>
+      <subject/>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment/>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>N</use_auth>
+      <use_secure_auth>N</use_secure_auth>
+      <auth_user/>
+      <auth_password>Encrypted </auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>622</xloc>
+      <yloc>341</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>carrera</to>
+      <to>carreras</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -472,8 +446,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>carrera</from>
-      <to>graduado_colacion</to>
+      <from>carreras</from>
+      <to>graduados_colacion</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -481,7 +455,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>graduado_colacion</from>
+      <from>graduados_colacion</from>
       <to>localidad</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -508,7 +482,16 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>carrera</from>
+      <from>recien_graduado</from>
+      <to>plan_estudio</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>carreras</from>
       <to>log_carga_carrera</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -517,8 +500,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>graduado_colacion</from>
-      <to>log_carga_grad_colac</to>
+      <from>graduados_colacion</from>
+      <to>log_grad_colacion</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -545,7 +528,7 @@
     </hop>
     <hop>
       <from>recien_graduado</from>
-      <to>log_carga_encuesta</to>
+      <to>log_carga_ncuesta</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -553,17 +536,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>recien_graduado</from>
-      <to>plan_estudio</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>plan_estudio</from>
-      <to>log_plan_estudio</to>
+      <to>log_carga_plan</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -580,7 +554,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_carga_grad_colac</from>
+      <from>log_grad_colacion</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -607,7 +581,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_carga_encuesta</from>
+      <from>log_carga_ncuesta</from>
       <to>Abortar trabajo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -616,17 +590,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>log_plan_estudio</from>
+      <from>log_carga_plan</from>
       <to>Abortar trabajo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Abortar trabajo</from>
-      <to>Correo Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -645,6 +610,15 @@
     <hop>
       <from>Éxito</from>
       <to>Correo Exito</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Abortar trabajo</from>
+      <to>Correo Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

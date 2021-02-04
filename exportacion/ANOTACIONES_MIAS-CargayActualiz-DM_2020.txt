@@ -8,18 +8,27 @@ Se crean las tablas d_ en el dsa
 -JOB Carga Datasets
 
 dsa_carrera (carga las carreras) = Vacia Tabla
+	=> dsa_carrera_ifx
 
 dsa_graduado_colacion (carga los graduados por colacion) = Vacia Tabla
+	=> dsa_grad_cola_ifx
+
 (ATENCION: carrera 111 de apostoles actualizar por 800)
 (Chequear que todos los DNI esten cargados en la columna nro_docu. Faltaron 25560026 fgregori, 30362464)
 
 dsa_localidad (carga las localidades) = Vacia Tabla
+	=>dsa_localidad_ifx
+
 dsa_colaciones (carga las colaciones) = Vacia Tabla
+	=>dsa_colacion_ifx
+
 dsa_recien_graduado (carga los resultados de la ERG) = Vacia tabla
+
+
 
 -JOB MAPEOS
 
-* Mapeo colacion:dsa_colacion_graduado OK
+* Mapeo colacion:dsa_colacion_graduado OK 				
 * Mapeo situacion actual: dsa_situacion_laboral_graduado OK
 * Mapeo cant_hs_sem: dsa_cant_hrs_sem OK
 * Mapeo sexo: dsa_sexo OK
@@ -66,6 +75,8 @@ Se crean las tablas d_ en el dsa
 -JOB Carga Datasets
 
 plan_estudio (carga las carrera, plan, duracion_teorica) = Vacia Tabla
+	=> dsa_plan_estudio_ifx
+
 Las tablas dsa_carrera, dsa_graduado_colacion, dsa_colaciones YA SE ENCUENTRAN CARGADAS
 Plan-estudio:SCRIPT (cargo la duracion teorica - ScriptF_planes_estudios.sql)
 

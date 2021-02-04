@@ -70,10 +70,10 @@
     <notepad>
       <note>Entrada:
 Se obtienen las respuestas a la Encuesta Recien Graduado.
-Fuente: SIU-Kolla, contenedor: resultados
+Fuente: SIU-Kolla, contenedor: resultados.
 
 Salida:
-Se cargan las respuestas en la tabla dsa.recien_graduado.</note>
+Se cargan las respuestas en la tabla recien_graduado.</note>
       <xloc>76</xloc>
       <yloc>24</yloc>
       <width>360</width>
@@ -117,7 +117,7 @@ Se cargan las respuestas en la tabla dsa.recien_graduado.</note>
     </attributes>
   </connection>
   <order>
-  <hop> <from>resultados_encuesta</from><to>recien_graduado</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>resultados</from><to>recien_graduado</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>recien_graduado</name>
     <type>TableOutput</type>
@@ -464,7 +464,7 @@ Se cargan las respuestas en la tabla dsa.recien_graduado.</note>
     </step>
 
   <step>
-    <name>resultados_encuesta</name>
+    <name>resultados</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>

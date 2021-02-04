@@ -228,7 +228,7 @@ Se cargan las colaciones en la tabla dsa.d_colacion.
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>261</xloc>
+      <xloc>262</xloc>
       <yloc>187</yloc>
       <draw>Y</draw>
       </GUI>

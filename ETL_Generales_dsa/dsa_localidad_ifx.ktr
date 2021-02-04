@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>dsa_graduado_colacion</name>
+    <name>dsa_localidad_ifx</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -51,7 +51,7 @@
     <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
-    <step_performance_capturing_size_limit/>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -60,41 +60,15 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user/>
-  <created_date>2020&#47;02&#47;13 08:19:27.740</created_date>
-  <modified_user/>
-  <modified_date>2020&#47;02&#47;13 08:19:27.740</modified_date>
+  <created_user>-</created_user>
+  <created_date>2020&#47;12&#47;05 08:46:13.442</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2020&#47;12&#47;05 08:46:13.442</modified_date>
   </info>
   <notepads>
-    <notepad>
-      <note>Entrada:
-Se obtienen los graduados por colacion del sistema Guarani.
-Fuente: SIU-Guarani, tabla: sga_titulos_otorg
-
-Salida:
-Se cargan los graduados por colacion en la tabla dsa.graduado_colacion.</note>
-      <xloc>81</xloc>
-      <yloc>10</yloc>
-      <width>433</width>
-      <heigth>100</heigth>
-      <fontname>Arial</fontname>
-      <fontsize>10</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>165</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <connection>
-    <name>dsaGraduadoColacion</name>
+    <name>dsaGraduados</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -115,10 +89,80 @@ Se cargan los graduados por colacion en la tabla dsa.graduado_colacion.</note>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>informix</name>
+    <server>170.210.</server>
+    <type>INFORMIX</type>
+    <access>Native</access>
+    <database>exaprueba</database>
+    <port>1526</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername>ol_exactas</servername>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1526</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>graduado_colacion</from><to>dsa_graduado_colacion</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>dsa_localidad_ifx</from><to>dsa_localidad</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>dsa_graduado_colacion</name>
+    <name>dsa_localidad_ifx</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>informix</connection>
+    <sql>-- Script C
+-- Exportacion de las localidades (mug_paises, mug_localidades, 
+-- mug_dptos_partidos, mug_provincias)
+-- BD: SIU-Kolla
+
+SELECT 
+  mug_localidades.localidad, 
+  mug_localidades.nombre, 
+  mug_localidades.dpto_partido, 
+  mug_dptos_partidos.nombre, 
+  mug_dptos_partidos.provincia, 
+  mug_provincias.nombre, 
+  mug_provincias.pais, 
+  mug_paises.nombre
+FROM 
+  kolla.mug_paises, 
+  kolla.mug_localidades, 
+  kolla.mug_dptos_partidos, 
+  kolla.mug_provincias
+WHERE 
+  mug_localidades.dpto_partido = mug_dptos_partidos.dpto_partido AND
+  mug_dptos_partidos.provincia = mug_provincias.provincia AND
+  mug_provincias.pais = mug_paises.pais;
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>146</xloc>
+      <yloc>153</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dsa_localidad</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -127,11 +171,11 @@ Se cargan los graduados por colacion en la tabla dsa.graduado_colacion.</note>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>dsaGraduadoColacion</connection>
+    <connection>dsaGraduados</connection>
     <schema>dsa</schema>
-    <table>graduado_colacion</table>
+    <table>localidad</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -146,178 +190,42 @@ Se cargan los graduados por colacion en la tabla dsa.graduado_colacion.</note>
     <return_field/>
     <fields>
         <field>
-          <column_name>nro_inscripcion</column_name>
-          <stream_name>nro_inscripcion</stream_name>
+          <column_name>loc_id</column_name>
+          <stream_name>localidad</stream_name>
         </field>
         <field>
-          <column_name>carrera</column_name>
-          <stream_name>carrera</stream_name>
+          <column_name>nom_loc</column_name>
+          <stream_name>nom_loc</stream_name>
         </field>
         <field>
-          <column_name>plan</column_name>
-          <stream_name>plan</stream_name>
+          <column_name>nom_dpto</column_name>
+          <stream_name>nom_dpto</stream_name>
         </field>
         <field>
-          <column_name>fecha_egreso</column_name>
-          <stream_name>fecha_egreso</stream_name>
+          <column_name>nom_prov</column_name>
+          <stream_name>nom_prov</stream_name>
         </field>
         <field>
-          <column_name>colacion</column_name>
-          <stream_name>colacion</stream_name>
+          <column_name>nom_pais</column_name>
+          <stream_name>nom_pais</stream_name>
         </field>
         <field>
-          <column_name>fecha_ingreso</column_name>
-          <stream_name>fecha_ingreso</stream_name>
+          <column_name>dpto_id</column_name>
+          <stream_name>dpto_partido</stream_name>
         </field>
         <field>
-          <column_name>tipo_documento</column_name>
-          <stream_name>tipo_documento</stream_name>
+          <column_name>prov_id</column_name>
+          <stream_name>provincia</stream_name>
         </field>
         <field>
-          <column_name>nro_documento</column_name>
-          <stream_name>nro_documento</stream_name>
-        </field>
-        <field>
-          <column_name>fecha_nacimiento</column_name>
-          <stream_name>fecha_nacimiento</stream_name>
+          <column_name>pais_id</column_name>
+          <stream_name>pais</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>313</xloc>
-      <yloc>140</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>graduado_colacion</name>
-    <type>CsvInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>&#47;home&#47;daniela&#47;Dropbox&#47;MTI&#47;Taller_Trabajo_Final&#47;Trabajo_Final&#47;scriptconversion&#47;exportacion&#47;salidas&#47;graduados_colacion.txt</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>	</separator>
-    <enclosure>&quot;</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <encoding>windows-1252</encoding>
-    <fields>
-      <field>
-        <name>nro_inscripcion</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>10</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>carrera</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>plan</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>fecha_egreso</name>
-        <type>Date</type>
-        <format>dd&#47;MM&#47;yyyy</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>colacion</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>fecha_ingreso</name>
-        <type>Date</type>
-        <format>dd&#47;MM&#47;yyyy</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>tipo_documento</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>nro_documento</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>fecha_nacimiento</name>
-        <type>Date</type>
-        <format>dd&#47;MM&#47;yyyy</format>
-        <currency>$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>171</xloc>
-      <yloc>139</yloc>
+      <xloc>334</xloc>
+      <yloc>153</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

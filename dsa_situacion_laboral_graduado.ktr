@@ -68,17 +68,13 @@
   </info>
   <notepads>
     <notepad>
-      <note>Entrada:
-Se obtiene la condicion actual laboral ordenada alfabeticamente y sin NULL.
-Fuente: SIU-Kolla, tabla: recien_graduado
-
-Salida:
+      <note>Salida:
 1. Se cargan los datos en la tabla d_situacion_laboral correspondiente al esquema dsa.
 2. Actualiza el campo bi_cond_actual en la tabla recien_graduado.</note>
-      <xloc>99</xloc>
-      <yloc>11</yloc>
+      <xloc>152</xloc>
+      <yloc>246</yloc>
       <width>516</width>
-      <heigth>115</heigth>
+      <heigth>55</heigth>
       <fontname>Arial</fontname>
       <fontsize>10</fontsize>
       <fontbold>N</fontbold>
@@ -86,9 +82,34 @@ Salida:
       <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>165</backgroundcolorgreen>
-      <backgroundcolorblue>0</backgroundcolorblue>
+      <backgroundcolorred>230</backgroundcolorred>
+      <backgroundcolorgreen>230</backgroundcolorgreen>
+      <backgroundcolorblue>250</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>N</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Entrada:
+Se obtiene la condicion actual laboral ordenada alfabeticamente y sin NULL.
+Fuente: SIU-Kolla, tabla: recien_graduado
+
+</note>
+      <xloc>49</xloc>
+      <yloc>65</yloc>
+      <width>451</width>
+      <heigth>85</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>230</backgroundcolorred>
+      <backgroundcolorgreen>230</backgroundcolorgreen>
+      <backgroundcolorblue>250</backgroundcolorblue>
       <bordercolorred>100</bordercolorred>
       <bordercolorgreen>100</bordercolorgreen>
       <bordercolorblue>100</bordercolorblue>
@@ -119,6 +140,44 @@ Salida:
   </connection>
   <order>
   <hop> <from>situacion_laboral</from><to>Mapeo de Valores</to><enabled>Y</enabled> </hop>  <hop> <from>Mapeo de Valores</from><to>d_situacion_laboral</to><enabled>Y</enabled> </hop>  <hop> <from>d_situacion_laboral</from><to>Actualizar</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Actualizar</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>dsaGraduados</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>dsa</schema>
+      <table>recien_graduado</table>
+      <key>
+        <name>cond_actual</name>
+        <field>cond_actual</field>
+        <condition>=</condition>
+        <name2/>
+        </key>
+      <value>
+        <name>bi_cond_actual</name>
+        <rename>aux_cond_actual</rename>
+        </value>
+      </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>177</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Mapeo de Valores</name>
     <type>ValueMapper</type>
@@ -153,7 +212,7 @@ Salida:
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>279</xloc>
-      <yloc>176</yloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -228,44 +287,6 @@ group by 1
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>149</xloc>
       <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Actualizar</name>
-    <type>Update</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>dsaGraduados</connection>
-    <skip_lookup>N</skip_lookup>
-    <commit>100</commit>
-    <use_batch>N</use_batch>
-    <error_ignored>N</error_ignored>
-    <ignore_flag_field/>
-    <lookup>
-      <schema>dsa</schema>
-      <table>recien_graduado</table>
-      <key>
-        <name>cond_actual</name>
-        <field>cond_actual</field>
-        <condition>=</condition>
-        <name2/>
-        </key>
-      <value>
-        <name>bi_cond_actual</name>
-        <rename>aux_cond_actual</rename>
-        </value>
-      </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
