@@ -1,5 +1,0 @@
-cod_colacion,nom_colacion,anio
-26,Colacion Jul/2018,2018
-27,Colacion Dic/2018,2018
-28,Colacion Dic/2019,2019
-29,Colacion Dic/2000,2020
