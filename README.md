@@ -1,5 +1,4 @@
 # BBII-FCEQyN
-# Código Fuente Sistema LeDig 
 
 Tesis de Maestría en Tecnologías de la Información
 
